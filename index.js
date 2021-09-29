@@ -10,6 +10,7 @@ const message = document.querySelector(".usr-msg");
 const availableNotes = [2000, 500, 100, 20, 10, 5, 1];
 
 submitButton.addEventListener("click", function validateBillAndCashAmount() {
+  showMessage("");
   if (billAmt.value > 0) {
     if (cashGiven.value >= billAmt.value) {
       const amountToBeReturned = cashGiven.value - billAmt.value;
@@ -18,7 +19,8 @@ submitButton.addEventListener("click", function validateBillAndCashAmount() {
     else {
       showMessage("Do you wanna wash plates?");
     }
-  } else {
+  } 
+  else {
     showMessage("Invalid Bill Amount");
   }
 });
