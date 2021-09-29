@@ -4,16 +4,18 @@ const billAmt = document.querySelector("#bill-amt");
 const cashGiven = document.querySelector('#pay-amt');
 const submitButton = document.querySelector('#btn-check');
 const numNotes = document.querySelectorAll(".notes-change");
+const message = document.querySelector(".usr-msg");
+
 
 const availableNotes = [2000, 500, 100, 20, 10, 5, 1];
 
 submitButton.addEventListener("click", function validateBillAndCashAmount() {
-//   hideMessage();
   if (billAmt.value > 0) {
     if (cashGiven.value >= billAmt.value) {
       const amountToBeReturned = cashGiven.value - billAmt.value;
       calculateChange(amountToBeReturned);
-    } else {
+    }
+    else {
       showMessage("Do you wanna wash plates?");
     }
   } else {
@@ -28,11 +30,6 @@ function calculateChange(amountToBeReturned) {
     numNotes[i].innerText = numberOfNotes;
   }
 }
-
-// function hideMessage() {
-//   message.style.display = "none";
-// }
-
 function showMessage(msg) {
   message.style.display = "block";
   message.innerText = msg;
