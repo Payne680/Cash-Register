@@ -35,6 +35,7 @@ body {
   border-radius: 10px;
   border: none;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .container button:hover {
